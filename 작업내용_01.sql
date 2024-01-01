@@ -123,7 +123,7 @@ public UserDto me2(
 
 @MappedSuperclass
 @Data
-@Builder
+@SuperBuilder
 public class BaseEntity {
 
     @Id
@@ -139,4 +139,14 @@ public class BaseEntity {
 @Table(name = "account")
 public class AccountEntity extends BaseEntity {
 }
+
+
+
+
+@Configuration
+@EntityScan(basePackages = "org.delivery.db")
+@EnableJpaRepositories(basePackages = "org.delivery.db")
+public class JpaConfig {
+}
+
 
